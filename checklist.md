@@ -106,7 +106,7 @@ Components:
 - [x] FeelingFeedback
 - [x] UnderstandingFeedback
 - [x] SupportedFeedback
-- [ ] CommentsFeedback
+- [x] CommentsFeedback
 - [ ] ReviewPage
 - [ ] SuccessPage
 - [ ] STRETCH:  AdminPage

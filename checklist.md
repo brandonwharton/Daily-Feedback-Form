@@ -104,7 +104,7 @@ feedbackEntry = {
 Components:
 
 - [x] FeelingFeedback
-- [ ] UnderstandingFeedback
+- [x] UnderstandingFeedback
 - [ ] SupportedFeedback
 - [ ] CommentsFeedback
 - [ ] ReviewPage

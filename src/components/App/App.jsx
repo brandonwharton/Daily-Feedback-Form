@@ -4,6 +4,8 @@ import './App.css';
 // component imports
 import FeelingFeedback from '../FeelingFeedback/FeelingFeedback';
 import UnderstandingFeedback from '../UnderstandingFeedback/UnderstandingFeedback';
+import SupportedFeedback from '../SupportedFeedback/SupportedFeedback';
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
       </header>
       <FeelingFeedback />
       <UnderstandingFeedback />
+      <SupportedFeedback />
     </div>
   );
 }

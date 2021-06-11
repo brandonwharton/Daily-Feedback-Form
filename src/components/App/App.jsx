@@ -7,7 +7,7 @@ import UnderstandingFeedback from '../UnderstandingFeedback/UnderstandingFeedbac
 import SupportedFeedback from '../SupportedFeedback/SupportedFeedback';
 import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
 import ReviewPage from '../ReviewPage/ReviewPage';
-
+import SuccessPage from '../SuccessPage/SuccessPage';
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
       <SupportedFeedback />
       <CommentsFeedback />
       <ReviewPage />
+      <SuccessPage />
     </div>
   );
 }

@@ -23,7 +23,7 @@ To Do:
     - [ ] TextField + next Button
         - [ ] Input validation
         - [ ] local state
-        - [ ] Button useHistory for '/understanding route'
+        - [ ] Button useHistory for '/understanding' route
     - [ ] useDispatch to send action to store on next button
         - [ ] 'ADD_FEELING'
 
@@ -31,7 +31,7 @@ To Do:
     - [ ] TextField + next Button
         - [ ] Input validation
         - [ ] local state
-        - [ ] Button useHistory for '/supported route'
+        - [ ] Button useHistory for '/supported' route
     - [ ] useDispatch to send action to store on next button
         - [ ] 'ADD_UNDERSTANDING'
 
@@ -39,7 +39,7 @@ To Do:
     - [ ] TextField + next Button
         - [ ] Input validation
         - [ ] local state
-        - [ ] Button useHistory for '/comments route'
+        - [ ] Button useHistory for '/comments' route
     - [ ] useDispatch to send action to store on next button
         - [ ] 'ADD_SUPPORTED'
 
@@ -47,30 +47,43 @@ To Do:
     - [ ] TextField + next Button
         - [ ] Mark as optional
         - [ ] local state
-        - [ ] Button useHistory for '/review route'
+        - [ ] Button useHistory for '/review' route
     - [ ] useDispatch to send action to store on next button
         - [ ] 'ADD_COMMENTS'
 
-- [ ] ReviewFeedback
+- [ ] ReviewPage
     - [ ] Display data to DOM
         - [ ] useSelector on feedbackData reducer to get data
         - [ ] OPTION: flag any missing feedback in case someone manually navigates to '/review' route
     - [ ] Submit button
-        - [ ] Input validation
-        - [ ] Button useHistory for '/success route'
-    - [ ] useDispatch to send action to store on next button
-        - [ ] 'ADD_FEELING'
+        - [ ] POST data to DB
+        - [ ] Button useHistory for '/success' route
+        - [ ] OPTION: input validation on button in case someone manually navigates to '/review' route
+
+- [ ] SuccessPage 
+    - [ ] Submission success message
+    - [ ] New Survey Button
+        - [ ] Reset feedbackData reducer state: 'RESET_FEEDBACK'
+        - [ ] Button useHistory for '/' route
 
 
-- [ ] '/success' - nav to SuccessPage
-
-
-
-
-
-
-
-
+- [ ] STRETCH
+    - [ ] Reverse-compatible routes/back buttons
+    - [ ] Material UI Suggestions
+        - [ ] cards
+        - [ ] snackbars
+        - [ ] nav bar
+        - [ ] icons
+        - [ ] theme
+    - [ ] AdminPage
+        - [ ] Display existing feedback
+            - [ ] Most recent at top of list
+        - [ ] Delete button
+            - [ ] DELETE route
+            - [ ] Confirmation before deleting
+        - [ ] Flag existing feedback for further review
+            - [ ] PUT route to switch flagged property
+    - [ ] Deploy to Heroku!
 
 
 
@@ -94,7 +107,7 @@ Components:
 - [ ] UnderstandingFeedback
 - [ ] SupportedFeedback
 - [ ] CommentsFeedback
-- [ ] ReviewFeedback
+- [ ] ReviewPage
 - [ ] SuccessPage
 - [ ] STRETCH:  AdminPage
 

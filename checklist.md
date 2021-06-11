@@ -103,7 +103,7 @@ feedbackEntry = {
 
 Components:
 
-- [ ] FeelingFeedback
+- [x] FeelingFeedback
 - [ ] UnderstandingFeedback
 - [ ] SupportedFeedback
 - [ ] CommentsFeedback

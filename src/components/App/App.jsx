@@ -3,6 +3,8 @@ import axios from 'axios';
 import './App.css';
 // component imports
 import FeelingFeedback from '../FeelingFeedback/FeelingFeedback';
+import UnderstandingFeedback from '../UnderstandingFeedback/UnderstandingFeedback';
+
 
 function App() {
 
@@ -14,6 +16,7 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <FeelingFeedback />
+      <UnderstandingFeedback />
     </div>
   );
 }

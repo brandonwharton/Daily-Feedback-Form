@@ -1,6 +1,69 @@
 To Do:
+- [ ] Build out component framework and test connections
 
-- [ ] 
+- [ ] index.js
+    - [ ] Create a store and provide it to App.js with props and Provider
+        - [ ] imports
+        - [ ] combineReducers and applyMiddleware
+            - [ ] include reducer(s), logger
+        - [ ] feedbackData reducer
+            - [ ] use object from data model
+            - [ ] switch statement for action.type from each page
+
+- [ ] app.jsx
+    - [ ] components in return
+    - [ ] Routes and links
+        - [ ] Maybe make a component or export these later if app.jsx is looking crowded?
+        - [ ] STRETCH: back buttons to go to previous feedback component page route
+            - [ ] STRETCH option: Nav bar to see which feedback component is active, how many there are, nav to them on click?
+    - [ ] imports
+        - [ ] STRETCH: Will need materialUI theme later
+
+- [ ] FeelingFeedback
+    - [ ] TextField + next Button
+        - [ ] Input validation
+        - [ ] local state
+        - [ ] Button useHistory for '/understanding route'
+    - [ ] useDispatch to send action to store on next button
+        - [ ] 'ADD_FEELING'
+
+- [ ] UnderstandingFeedback
+    - [ ] TextField + next Button
+        - [ ] Input validation
+        - [ ] local state
+        - [ ] Button useHistory for '/supported route'
+    - [ ] useDispatch to send action to store on next button
+        - [ ] 'ADD_UNDERSTANDING'
+
+- [ ] SupportedFeedback
+    - [ ] TextField + next Button
+        - [ ] Input validation
+        - [ ] local state
+        - [ ] Button useHistory for '/comments route'
+    - [ ] useDispatch to send action to store on next button
+        - [ ] 'ADD_SUPPORTED'
+
+- [ ] CommentsFeedback
+    - [ ] TextField + next Button
+        - [ ] Mark as optional
+        - [ ] local state
+        - [ ] Button useHistory for '/review route'
+    - [ ] useDispatch to send action to store on next button
+        - [ ] 'ADD_COMMENTS'
+
+- [ ] ReviewFeedback
+    - [ ] Display data to DOM
+        - [ ] useSelector on feedbackData reducer to get data
+        - [ ] OPTION: flag any missing feedback in case someone manually navigates to '/review' route
+    - [ ] Submit button
+        - [ ] Input validation
+        - [ ] Button useHistory for '/success route'
+    - [ ] useDispatch to send action to store on next button
+        - [ ] 'ADD_FEELING'
+
+
+- [ ] '/success' - nav to SuccessPage
+
 
 
 

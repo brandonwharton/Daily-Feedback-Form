@@ -105,7 +105,7 @@ Components:
 
 - [x] FeelingFeedback
 - [x] UnderstandingFeedback
-- [ ] SupportedFeedback
+- [x] SupportedFeedback
 - [ ] CommentsFeedback
 - [ ] ReviewPage
 - [ ] SuccessPage

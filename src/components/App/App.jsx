@@ -5,6 +5,7 @@ import './App.css';
 import FeelingFeedback from '../FeelingFeedback/FeelingFeedback';
 import UnderstandingFeedback from '../UnderstandingFeedback/UnderstandingFeedback';
 import SupportedFeedback from '../SupportedFeedback/SupportedFeedback';
+import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <FeelingFeedback />
       <UnderstandingFeedback />
       <SupportedFeedback />
+      <CommentsFeedback />
     </div>
   );
 }

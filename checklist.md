@@ -37,7 +37,7 @@ To Do:
         - [x] 'ADD_UNDERSTANDING'
 
 - [ ] SupportedFeedback
-    - [ ] TextField + next Button
+    - [x] TextField + next Button
         - [x] Input validation
         - [x] local state
         - [x] Button useHistory for '/comments' route

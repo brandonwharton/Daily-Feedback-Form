@@ -20,8 +20,13 @@ function FeelingFeedback () {
 
 
     const feelingToReducer = (event) => {
+        // keep page from refreshing on click
         event.preventDefault();
-        console.log('Clicked');
+        // send collected form data to feedbackData reducer
+        dispatch({
+            type: 'ADD_FEELING',
+            payload: feeling
+        })
     }
 
     console.log(feeling);

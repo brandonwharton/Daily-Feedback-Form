@@ -23,7 +23,7 @@ To Do:
     - [ ] TextField + next Button
         - [ ] Input validation
             - [ ] OPTION: bubbles to choose from, only allow numbers 1-5
-        - [ ] local state
+        - [x] local state
         - [ ] Button useHistory for '/understanding' route
     - [ ] useDispatch to send action to store on next button
         - [ ] 'ADD_FEELING'

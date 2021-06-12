@@ -32,8 +32,10 @@ function App() {
         <Route path='/comments'>
           <CommentsFeedback />
         </Route>
-        {/* <ReviewPage />
-        <SuccessPage /> */}
+        <Route path='/review'>
+          <ReviewPage />
+        </Route>
+        {/* <SuccessPage /> */}
       </div>
     </Router>
   );

@@ -31,7 +31,7 @@ function CommentsFeedback () {
             payload: comments
         })
         // navigate to ReviewPage component after dispatch
-        // history.push('/review');
+        history.push('/review');
     }
 
     return (

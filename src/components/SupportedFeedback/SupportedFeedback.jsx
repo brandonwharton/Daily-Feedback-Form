@@ -37,6 +37,14 @@ function SupportedFeedback () {
         history.push('/comments');
     }
 
+    // on click of the Back button, return to FeelingFeedback component page
+    const navigateBack = (event) => {
+        // keep page from refreshing on click
+        event.preventDefault();
+        // navigate back
+        history.push('/understanding');
+    }
+
     return (
         <div>
             <h2>How well did you feel supported today?</h2>

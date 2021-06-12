@@ -15,6 +15,7 @@ function FeelingFeedback () {
     const history = useHistory();
     // state for tracking changes to TextField
     const [feeling, setFeeling] = useState('');
+    // bring in data from feedbackData reducer to autofill input value on back navigation
     const feedbackData = useSelector(store => store.feedbackData);
 
     
@@ -39,7 +40,7 @@ function FeelingFeedback () {
         // navigate to UnderstandingFeedback component after dispatch
         history.push('/understanding');
     }
-    console.log(feedbackData.feeling);
+
     return (
         <div>
             <h2>How are you feeling after today?</h2>
@@ -51,6 +52,7 @@ function FeelingFeedback () {
                 <TextField 
                     required
                     label="feeling"
+                    // set a default value using the feedbackData reducer value
                     defaultValue={feedbackData.feeling}
                     type="number"
                     id="feeling-field"

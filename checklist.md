@@ -38,11 +38,11 @@ To Do:
 
 - [ ] SupportedFeedback
     - [ ] TextField + next Button
-        - [ ] Input validation
-        - [ ] local state
+        - [x] Input validation
+        - [x] local state
         - [ ] Button useHistory for '/comments' route
-    - [ ] useDispatch to send action to store on next button
-        - [ ] 'ADD_SUPPORTED'
+    - [x] useDispatch to send action to store on next button
+        - [x] 'ADD_SUPPORTED'
 
 - [ ] CommentsFeedback
     - [ ] TextField + next Button

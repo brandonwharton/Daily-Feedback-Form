@@ -35,7 +35,7 @@ function SupportedFeedback () {
             payload: rating
         })
         // navigate to SupportedFeedback component after dispatch
-        // history.push('/supported');
+        history.push('/comments');
     }
 
     console.log(supported);

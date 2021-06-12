@@ -11,6 +11,8 @@ import FormControl from '@material-ui/core/FormControl';
 function FeelingFeedback () {
     // set up dispatch to reducers
     const dispatch = useDispatch();
+    // useHistory to navigate to other routes
+    const history = useHistory();
     // state for tracking changes to TextField
     const [feeling, setFeeling] = useState('');
     
@@ -18,7 +20,7 @@ function FeelingFeedback () {
         // update local state with value in TextField
         setFeeling(event.target.value);
     }
-
+    // bring in inputValidation module for ensuring rating data meets necessary parameters
     const inputValidation = require('../../modules/inputValidation.js');
 
     // once feeling data has been validated, dispatch to reducer and navigate to next page
@@ -33,6 +35,8 @@ function FeelingFeedback () {
             type: 'ADD_FEELING',
             payload: rating
         })
+        // navigate to UnderstandingFeedback component after dispatch
+        history.push('/understanding');
     }
 
     console.log(feeling);

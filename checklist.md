@@ -62,7 +62,8 @@ To Do:
         - [ ] OPTION: input validation on button in case someone manually navigates to '/review' route
 
 - [ ] SuccessPage 
-    - [ ] Submission success message
+    - [x] Submission success message
+        - [ ] Make as an alert?
     - [ ] New Survey Button
         - [ ] Reset feedbackData reducer state: 'RESET_FEEDBACK'
         - [ ] Button useHistory for '/' route

@@ -35,8 +35,8 @@ function UnderstandingFeedback () {
             type: 'ADD_UNDERSTANDING',
             payload: rating
         })
-        // navigate to UnderstandingFeedback component after dispatch
-        // history.push('/understanding');
+        // navigate to SupportedFeedback component after dispatch
+        history.push('/supported');
     }
 
     console.log(understanding);

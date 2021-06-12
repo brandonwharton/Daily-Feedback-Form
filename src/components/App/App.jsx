@@ -26,8 +26,10 @@ function App() {
         <Route path='/understanding'>
           <UnderstandingFeedback />
         </Route>
-        {/*<SupportedFeedback />
-        <CommentsFeedback />
+        <Route path='/supported'>
+          <SupportedFeedback />
+        </Route>
+        {/* <CommentsFeedback />
         <ReviewPage />
         <SuccessPage /> */}
       </div>

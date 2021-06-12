@@ -74,7 +74,7 @@ function UnderstandingFeedback () {
             </FormControl>
             <Button
                 variant="contained"
-                color="link"
+                color="secondary"
                 onClick={navigateBack}
             >
                 Back

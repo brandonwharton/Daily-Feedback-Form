@@ -13,8 +13,12 @@ function ReviewPage () {
     // get data from feedbackData reducer in redux store
     const feedbackData = useSelector(store => store.feedbackData)
 
+
+    // click listener for submit button, POSTs data to DB and navigates to /success route
     const handleSubmit = (event) => {
-        console.log('Clicked');
+        // keep page from refreshing on click
+        event.preventDefault();
+        // make POST request to server with data from feedbackData reducer
         axios.post('/feedback', feedbackData)
             .then(response => {
                 console.log('Sent to DB', feedbackData);
@@ -26,7 +30,7 @@ function ReviewPage () {
             });
 
     }
-    console.log(feedbackData);
+
     return (
         <div>
             <h2>Review Your Feedback</h2>

@@ -38,6 +38,15 @@ function UnderstandingFeedback () {
         history.push('/supported');
     }
 
+    // on click of the Back button, return to FeelingFeedback component page
+    const navigateBack = (event) => {
+        // keep page from refreshing on click
+        event.preventDefault();
+        // navigate back
+        history.push('/');
+    }
+
+
     return (
         <div>
             <h2>How well did you understand today's material?</h2>
@@ -63,6 +72,13 @@ function UnderstandingFeedback () {
                     Next
                 </Button>
             </FormControl>
+            <Button
+                variant="contained"
+                color="link"
+                onClick={navigateBack}
+            >
+                Back
+            </Button>
 
         </div>
 

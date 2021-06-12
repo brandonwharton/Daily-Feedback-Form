@@ -40,7 +40,7 @@ To Do:
     - [ ] TextField + next Button
         - [x] Input validation
         - [x] local state
-        - [ ] Button useHistory for '/comments' route
+        - [x] Button useHistory for '/comments' route
     - [x] useDispatch to send action to store on next button
         - [x] 'ADD_SUPPORTED'
 

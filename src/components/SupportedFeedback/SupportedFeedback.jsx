@@ -29,7 +29,6 @@ function SupportedFeedback () {
             return;
         }
         // send collected form data to feedbackData reducer
-        console.log('clicked!');
         dispatch({
             type: 'ADD_SUPPORTED',
             payload: rating
@@ -38,7 +37,6 @@ function SupportedFeedback () {
         history.push('/comments');
     }
 
-    console.log(supported);
     return (
         <div>
             <h2>How well did you feel supported today?</h2>

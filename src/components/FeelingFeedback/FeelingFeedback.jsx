@@ -30,7 +30,6 @@ function FeelingFeedback () {
             return;
         }
         // send collected form data to feedbackData reducer
-        console.log('clicked!');
         dispatch({
             type: 'ADD_FEELING',
             payload: rating
@@ -39,7 +38,6 @@ function FeelingFeedback () {
         history.push('/understanding');
     }
 
-    console.log(feeling);
     return (
         <div>
             <h2>How are you feeling after today?</h2>

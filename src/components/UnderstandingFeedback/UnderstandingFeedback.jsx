@@ -30,7 +30,6 @@ function UnderstandingFeedback () {
             return;
         }
         // send collected form data to feedbackData reducer
-        console.log('clicked!');
         dispatch({
             type: 'ADD_UNDERSTANDING',
             payload: rating
@@ -39,7 +38,6 @@ function UnderstandingFeedback () {
         history.push('/supported');
     }
 
-    console.log(understanding);
     return (
         <div>
             <h2>How well did you understand today's material?</h2>

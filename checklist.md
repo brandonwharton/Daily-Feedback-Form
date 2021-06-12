@@ -54,7 +54,7 @@ To Do:
 
 - [ ] ReviewPage
     - [ ] Display data to DOM
-        - [ ] useSelector on feedbackData reducer to get data
+        - [x] useSelector on feedbackData reducer to get data
         - [ ] OPTION: flag any missing feedback in case someone manually navigates to '/review' route
     - [ ] Submit button
         - [ ] POST data to DB
@@ -124,7 +124,7 @@ Routes:
     - [ ] Optional idea: '/' is a welcome page that introduces you to app and lets you start the feedback form
 - [x] '/understanding' - nav to UnderstandingFeedback
 - [x] '/supported' - nav to SupportedFeedback
-- [ ] '/comments' - nav to CommentsFeedback
-- [ ] '/review' - nav to ReviewPage
+- [x] '/comments' - nav to CommentsFeedback
+- [x] '/review' - nav to ReviewPage
 - [ ] '/success' - nav to SuccessPage
 - [ ] STRETCH: '/admin' - nav to AdminPage

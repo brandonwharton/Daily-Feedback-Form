@@ -57,8 +57,8 @@ To Do:
         - [x] useSelector on feedbackData reducer to get data
         - [ ] OPTION: flag any missing feedback in case someone manually navigates to '/review' route
     - [ ] Submit button
-        - [ ] POST data to DB
-        - [ ] Button useHistory for '/success' route
+        - [x] POST data to DB
+        - [x] Button useHistory for '/success' route
         - [ ] OPTION: input validation on button in case someone manually navigates to '/review' route
 
 - [ ] SuccessPage 
@@ -67,9 +67,9 @@ To Do:
         - [ ] Reset feedbackData reducer state: 'RESET_FEEDBACK'
         - [ ] Button useHistory for '/' route
 
-- [ ] make a feedback router, adjust server.js with router info
-    - [ ] '/feedback' for axios requests
-    - [ ] POST route
+- [] make a feedback router, adjust server.js with router info
+    - [x] '/feedback' for axios requests
+    - [x] POST route
     - [ ] STRETCH: DELETE route
     - [ ] STRETCH: PUT route
 

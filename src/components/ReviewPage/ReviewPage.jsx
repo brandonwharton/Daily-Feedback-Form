@@ -1,11 +1,15 @@
 import axios from "axios";
 // hooks
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 // material-UI components
 import Button from '@material-ui/core/Button';
 
 
+
 function ReviewPage () {
+    // useHistory to navigate to other routes
+    const history = useHistory();
     // get data from feedbackData reducer in redux store
     const feedbackData = useSelector(store => store.feedbackData)
 
@@ -14,6 +18,7 @@ function ReviewPage () {
         axios.post('/feedback', feedbackData)
             .then(response => {
                 console.log('Sent to DB', feedbackData);
+                history.push('/success')
             })
             .catch(err => {
                 alert('Problem submitting review, try again');

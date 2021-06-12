@@ -35,7 +35,9 @@ function App() {
         <Route path='/review'>
           <ReviewPage />
         </Route>
-        {/* <SuccessPage /> */}
+        <Route path='/success'>
+          <SuccessPage />
+        </Route>
       </div>
     </Router>
   );

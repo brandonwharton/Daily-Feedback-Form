@@ -54,11 +54,11 @@ To Do:
 
 - [ ] ReviewPage
     - [ ] Display data to DOM
-        - [ ] useSelector on feedbackData reducer to get data
+        - [x] useSelector on feedbackData reducer to get data
         - [ ] OPTION: flag any missing feedback in case someone manually navigates to '/review' route
     - [ ] Submit button
-        - [ ] POST data to DB
-        - [ ] Button useHistory for '/success' route
+        - [x] POST data to DB
+        - [x] Button useHistory for '/success' route
         - [ ] OPTION: input validation on button in case someone manually navigates to '/review' route
 
 - [ ] SuccessPage 
@@ -67,9 +67,9 @@ To Do:
         - [ ] Reset feedbackData reducer state: 'RESET_FEEDBACK'
         - [ ] Button useHistory for '/' route
 
-- [ ] make a feedback router, adjust server.js with router info
-    - [ ] '/feedback' for axios requests
-    - [ ] POST route
+- [] make a feedback router, adjust server.js with router info
+    - [x] '/feedback' for axios requests
+    - [x] POST route
     - [ ] STRETCH: DELETE route
     - [ ] STRETCH: PUT route
 
@@ -124,7 +124,7 @@ Routes:
     - [ ] Optional idea: '/' is a welcome page that introduces you to app and lets you start the feedback form
 - [x] '/understanding' - nav to UnderstandingFeedback
 - [x] '/supported' - nav to SupportedFeedback
-- [ ] '/comments' - nav to CommentsFeedback
-- [ ] '/review' - nav to ReviewPage
+- [x] '/comments' - nav to CommentsFeedback
+- [x] '/review' - nav to ReviewPage
 - [ ] '/success' - nav to SuccessPage
 - [ ] STRETCH: '/admin' - nav to AdminPage

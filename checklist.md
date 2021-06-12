@@ -24,7 +24,7 @@ To Do:
         - [x] Input validation
             - [ ] OPTION: bubbles to choose from, only allow numbers 1-5
         - [x] local state
-        - [ ] Button useHistory for '/understanding' route
+        - [x] Button useHistory for '/understanding' route
     - [x] useDispatch to send action to store on next button
         - [x] 'ADD_FEELING'
 

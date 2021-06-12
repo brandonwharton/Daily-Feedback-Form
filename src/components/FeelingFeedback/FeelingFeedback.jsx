@@ -19,33 +19,19 @@ function FeelingFeedback () {
         setFeeling(event.target.value);
     }
 
+    const inputValidation = require('../../modules/inputValidation.js');
 
-    const feelingToReducer = (event) => {
-        // keep page from refreshing on click
-        event.preventDefault();
-        // form validation
-        // check for empty input field
-        if (feeling === '') {
-            alert('Enter a feeling rating between 1 and 5');
-            return;
-        // check for an input field that's too long
-        } else if (feeling.length !== 1) {
-            alert('Entry must be between 1 and 5');
-            return;
-        // check for characters that aren't numbers
-        } else if (typeof Number(feeling) !== 'number') {
-            alert('Enter a number 1 through 5');
-            return;
-        } else if (feeling > 5 || feeling < 1) {
-            alert('Enter a number 1 through 5');
+    // once feeling data has been validated, dispatch to reducer and navigate to next page
+    const feelingToReducer = (rating) => {
+        // break out of function if input wasn't validated
+        if (!rating) {
             return;
         }
-
         // send collected form data to feedbackData reducer
         console.log('clicked!');
         dispatch({
             type: 'ADD_FEELING',
-            payload: feeling
+            payload: rating
         })
     }
 
@@ -55,10 +41,9 @@ function FeelingFeedback () {
             <h2>How are you feeling after today?</h2>
             <p>1: Not feeling good at all.</p>
             <p>5: Feeling great!</p>
-    
-
-            {/* Need to work on this later, was having trouble with form validation */}
-            <FormControl onSubmit={feelingToReducer} required>
+            {/* onSubmit, call feelingToReducer to try and dispatch data and move to next page */}
+            {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
+            <FormControl onSubmit={() => feelingToReducer(inputValidation(event, feeling))} required>
                 <TextField 
                     required
                     label="feeling"
@@ -82,7 +67,9 @@ function FeelingFeedback () {
                 />
                 <Button
                     variant="contained"
-                    onClick={feelingToReducer}
+                    // onClick, call feelingToReducer to try and dispatch data and move to next page, passing it
+                    // through the inputValidation module function first to ensure input is within necessary paramaters
+                    onClick={() => feelingToReducer(inputValidation(event, feeling))}
                 >
                     Next
                 </Button>

@@ -2,13 +2,13 @@ To Do:
 - [ ] Build out component framework and test connections
 
 - [ ] index.js
-    - [ ] Create a store and provide it to App.js with props and Provider
-        - [ ] imports
-        - [ ] combineReducers and applyMiddleware
-            - [ ] include reducer(s), logger
-        - [ ] feedbackData reducer
-            - [ ] use object from data model
-            - [ ] switch statement for action.type from each page
+    - [x] Create a store and provide it to App.js with props and Provider
+        - [x] imports
+        - [x] combineReducers and applyMiddleware
+            - [x] include reducer(s), logger
+        - [x] feedbackData reducer
+            - [x] use object from data model
+            - [x] switch statement for action.type from each page
 
 - [ ] app.jsx
     - [x] components in return

@@ -19,11 +19,11 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <FeelingFeedback />
-      <UnderstandingFeedback />
+      {/* <UnderstandingFeedback />
       <SupportedFeedback />
       <CommentsFeedback />
       <ReviewPage />
-      <SuccessPage />
+      <SuccessPage /> */}
     </div>
   );
 }

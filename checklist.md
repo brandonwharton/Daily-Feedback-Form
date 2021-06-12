@@ -11,7 +11,7 @@ To Do:
             - [ ] switch statement for action.type from each page
 
 - [ ] app.jsx
-    - [ ] components in return
+    - [x] components in return
     - [ ] Routes and links
         - [ ] Maybe make a component or export these later if app.jsx is looking crowded?
         - [ ] STRETCH: back buttons to go to previous feedback component page route
@@ -66,6 +66,12 @@ To Do:
         - [ ] Reset feedbackData reducer state: 'RESET_FEEDBACK'
         - [ ] Button useHistory for '/' route
 
+- [ ] make a feedback router, adjust server.js with router info
+    - [ ] '/feedback' for axios requests
+    - [ ] POST route
+    - [ ] STRETCH: DELETE route
+    - [ ] STRETCH: PUT route
+
 
 - [ ] STRETCH
     - [ ] Reverse-compatible routes/back buttons
@@ -108,7 +114,7 @@ Components:
 - [x] SupportedFeedback
 - [x] CommentsFeedback
 - [x] ReviewPage
-- [ ] SuccessPage
+- [x] SuccessPage
 - [ ] STRETCH:  AdminPage
 
 Routes:

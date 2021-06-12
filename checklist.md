@@ -37,7 +37,7 @@ To Do:
         - [x] 'ADD_UNDERSTANDING'
 
 - [ ] SupportedFeedback
-    - [ ] TextField + next Button
+    - [x] TextField + next Button
         - [x] Input validation
         - [x] local state
         - [x] Button useHistory for '/comments' route
@@ -45,12 +45,12 @@ To Do:
         - [x] 'ADD_SUPPORTED'
 
 - [ ] CommentsFeedback
-    - [ ] TextField + next Button
-        - [ ] Mark as optional
-        - [ ] local state
-        - [ ] Button useHistory for '/review' route
-    - [ ] useDispatch to send action to store on next button
-        - [ ] 'ADD_COMMENTS'
+    - [x] TextField + next Button
+        - [x] Mark as optional
+        - [x] local state
+        - [x] Button useHistory for '/review' route
+    - [x] useDispatch to send action to store on next button
+        - [x] 'ADD_COMMENTS'
 
 - [ ] ReviewPage
     - [ ] Display data to DOM

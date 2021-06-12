@@ -29,10 +29,10 @@ To Do:
         - [x] 'ADD_FEELING'
 
 - [ ] UnderstandingFeedback
-    - [ ] TextField + next Button
+    - [x] TextField + next Button
         - [x] Input validation
         - [x] local state
-        - [ ] Button useHistory for '/supported' route
+        - [x] Button useHistory for '/supported' route
     - [x] useDispatch to send action to store on next button
         - [x] 'ADD_UNDERSTANDING'
 
@@ -123,7 +123,7 @@ Routes:
 - [x] '/' - nav to FeelingFeedback
     - [ ] Optional idea: '/' is a welcome page that introduces you to app and lets you start the feedback form
 - [x] '/understanding' - nav to UnderstandingFeedback
-- [ ] '/supported' - nav to SupportedFeedback
+- [x] '/supported' - nav to SupportedFeedback
 - [ ] '/comments' - nav to CommentsFeedback
 - [ ] '/review' - nav to ReviewPage
 - [ ] '/success' - nav to SuccessPage

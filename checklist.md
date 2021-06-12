@@ -24,17 +24,17 @@ To Do:
         - [x] Input validation
             - [ ] OPTION: bubbles to choose from, only allow numbers 1-5
         - [x] local state
-        - [ ] Button useHistory for '/understanding' route
+        - [x] Button useHistory for '/understanding' route
     - [x] useDispatch to send action to store on next button
         - [x] 'ADD_FEELING'
 
 - [ ] UnderstandingFeedback
     - [ ] TextField + next Button
-        - [ ] Input validation
-        - [ ] local state
+        - [x] Input validation
+        - [x] local state
         - [ ] Button useHistory for '/supported' route
-    - [ ] useDispatch to send action to store on next button
-        - [ ] 'ADD_UNDERSTANDING'
+    - [x] useDispatch to send action to store on next button
+        - [x] 'ADD_UNDERSTANDING'
 
 - [ ] SupportedFeedback
     - [ ] TextField + next Button
@@ -120,9 +120,9 @@ Components:
 
 Routes:
 
-- [ ] '/' - nav to FeelingFeedback
+- [x] '/' - nav to FeelingFeedback
     - [ ] Optional idea: '/' is a welcome page that introduces you to app and lets you start the feedback form
-- [ ] '/understanding' - nav to UnderstandingFeedback
+- [x] '/understanding' - nav to UnderstandingFeedback
 - [ ] '/supported' - nav to SupportedFeedback
 - [ ] '/comments' - nav to CommentsFeedback
 - [ ] '/review' - nav to ReviewPage

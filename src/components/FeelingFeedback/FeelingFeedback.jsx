@@ -53,31 +53,19 @@ function FeelingFeedback () {
             <h2>How are you feeling after today?</h2>
             <p>1: Not feeling good at all.</p>
             <p>5: Feeling great!</p>
+
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
             {feedbackData.feeling && <h3>Previous Choice: {feedbackData.feeling}</h3>}
             {/* Conditionally render an alert message if the alert state becomes true */}
             {alert && <Alert severity="error">Entry must be a number between 1 and 5</Alert>}
+            
             {/* onSubmit, call feelingToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
-            <FormControl onSubmit={() => feelingToReducer(inputValidation(event, feeling))} required>
+            <FormControl onSubmit={() => feelingToReducer(inputValidation(event, feeling))}>
                 <TextField 
-                    required
                     label="feeling"
                     type="number"
                     id="feeling-field"
-                    // rules={{
-                    //     required: true,
-                    //     maxLength: {
-                    //         value: 1,
-                    //         message: "Cannot exceed one digit"
-                    //     },
-                    //     minLength: {
-                    //         value: 1,
-                    //         message: "Must be exactly one digit"
-                    //     }
-                    // }}
-                    
-                    // inputProps={{maxLength: 1}} // only allow a single character in field NOT WORKING
                     onChange={handleChange}
                 />
                 <Button
@@ -89,10 +77,7 @@ function FeelingFeedback () {
                     Next
                 </Button>
             </FormControl>
-
         </div>
-
-
     )
 }
 

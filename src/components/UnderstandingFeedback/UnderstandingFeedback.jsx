@@ -62,17 +62,17 @@ function UnderstandingFeedback () {
             <h2>How well did you understand today's material?</h2>
             <p>1: I'm having a lot of trouble with this.</p>
             <p>5: I could teach somebody this material.</p>
+
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
             {feedbackData.understanding && <h3>Previous Choice: {feedbackData.understanding}</h3> }
             {/* Conditionally render an alert message if the alert state becomes true */}
             {alert && <Alert severity="error">Entry must be a number between 1 and 5</Alert>}
+            
             {/* onSubmit, call understandingToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
-            <FormControl onSubmit={() => understandingToReducer(inputValidation(event, understanding))} required>
+            <FormControl onSubmit={() => understandingToReducer(inputValidation(event, understanding))}>
                 <TextField 
-                    required
                     label="understanding"
-                    defaultValue="required"
                     type="number"
                     id="understanding-field"
                     onChange={handleChange}

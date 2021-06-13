@@ -63,17 +63,17 @@ function SupportedFeedback () {
             <h2>How well did you feel supported today?</h2>
             <p>1: I felt like I was entirely on my own.</p>
             <p>5: I felt like I always had someone behind me if I needed it!</p>
+
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
             {feedbackData.support && <h3>Previous Choice: {feedbackData.support}</h3> }
             {/* Conditionally render an alert message if the alert state becomes true */}
             {alert && <Alert severity="error">Entry must be a number between 1 and 5</Alert>}
+            
             {/* onSubmit, call supportedToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
-            <FormControl onSubmit={() => supportedToReducer(inputValidation(event, supported))} required>
+            <FormControl onSubmit={() => supportedToReducer(inputValidation(event, supported))}>
                 <TextField 
-                    required
                     label="supported"
-                    defaultValue="required"
                     type="number"
                     id="supported-field"
                     onChange={handleChange}
@@ -89,8 +89,6 @@ function SupportedFeedback () {
             </FormControl> 
             <BackButton navigateBack={navigateBack}/>
         </div>
-
-
     )
 }
 export default SupportedFeedback;

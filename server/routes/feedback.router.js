@@ -6,7 +6,7 @@ const poool = require('../modules/pool');
 // GET route to get all the previous feedback for the admin page
 router.get('/', (req, res) => {
     // SQL query for GET
-    const queryText = `SELECT * FROM "feedback"`
+    const queryText = `SELECT * FROM "feedback" ORDER BY "id" DESC;`
     // GET data from DB
     pool.query(queryText)
         .then(result => {

@@ -3,6 +3,22 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const poool = require('../modules/pool');
 
+// GET route to get all the previous feedback for the admin page
+router.get('/', (req, res) => {
+    // SQL query for GET
+    const queryText = `SELECT * FROM "feedback"`
+    // GET data from DB
+    pool.query(queryText)
+        .then(response => {
+            console.log('GET from DB successful');
+            res.send(response.rows);
+        })
+        .catch(err => {
+            console.log('Server error with GET request to DB', err);
+            res.sendStatus(500);
+        });
+})
+
 
 // POST route to send a fully completed feedback form to the DB
 router.post('/', (req, res) => {

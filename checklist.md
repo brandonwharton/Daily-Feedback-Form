@@ -76,12 +76,12 @@ To Do:
 
 
 - [ ] STRETCH
-    - [ ] Reverse-compatible routes/back buttons
-    - [ ] Material UI Suggestions
+    - [x] Reverse-compatible routes/back buttons
+    - [x] Material UI Suggestions
         - [ ] cards
         - [ ] snackbars
         - [ ] nav bar
-        - [ ] icons
+        - [x] icons
         - [ ] theme
     - [ ] AdminPage
         - [ ] Display existing feedback
@@ -127,5 +127,5 @@ Routes:
 - [x] '/supported' - nav to SupportedFeedback
 - [x] '/comments' - nav to CommentsFeedback
 - [x] '/review' - nav to ReviewPage
-- [ ] '/success' - nav to SuccessPage
+- [x] '/success' - nav to SuccessPage
 - [ ] STRETCH: '/admin' - nav to AdminPage

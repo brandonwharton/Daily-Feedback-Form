@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
             console.log('Server error with GET request to DB', err);
             res.sendStatus(500);
         });
-})
+    });
 
 
 // POST route to send a fully completed feedback form to the DB
@@ -37,8 +37,8 @@ router.post('/', (req, res) => {
         .catch(err => {
             console.log('Server error with POST request to DB', err);
             res.sendStatus(500);
-        })
-})
+        });
+    });
 
 
 // DELETE route from the admin page to remove a DB feedback entry
@@ -57,6 +57,26 @@ router.delete('/:id', (req, res) => {
             console.log('Server error with DELETE request to DB',err);
             res.sendStatus(500);
         });
-})
+    });
+
+
+// PUT route from the admin page to flag a DB entry
+router.put('/:id', (req, res) => {
+    // hold the id and flagged status of feedback to be flagged
+    const flagged = req.params.flagged;
+    const feedbackId = req.params.id;
+    // save a query to add a like to an image in the DB with a sanitized galleryId
+    const queryText = `UPDATE "feedback" SET "flagged" = $1 WHERE "id" = $2;`;
+    // request a like increase to DB
+    pool.query(queryText, [flagged, feedbackId])
+        .then(result => {
+            console.log('PUT to DB successful');
+            res.sendStatus(200);
+        })
+        .catch(err => {
+            console.log('Server error with PUT request to DB', err);
+            res.sendStatus(500);
+        });
+    });
 
 module.exports = router;

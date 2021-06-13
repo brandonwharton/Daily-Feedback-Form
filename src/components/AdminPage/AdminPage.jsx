@@ -35,6 +35,7 @@ function AdminPage() {
     // local state for alert dialogue
     const [open, setOpen] = useState(false);
     const [deleteId, setDeleteId] = useState('');
+    const [isFlagged, setIsFlagged] = useState(false);
 
     useEffect(() => {
         getFeedback();

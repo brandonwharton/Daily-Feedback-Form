@@ -80,7 +80,9 @@ function UnderstandingFeedback() {
             <BorderLinearProgress variant="determinate" value={25} />
             <div className="feedback-container">
                 <div className="feedback-col-1">
-                    <BackButton navigateBack={navigateBack} />
+                    <div className="back-button">
+                        <BackButton className="back-button" navigateBack={navigateBack} />
+                    </div>
                 </div>
                 <div className="feedback-col-2">
                     <h2>How well did you understand today's material?</h2>
@@ -104,15 +106,17 @@ function UnderstandingFeedback() {
                     </FormControl>
                 </div>
                 <div className="feedback-col-3">
-                    <Button
-                        variant="contained"
-                        style={{maxWidth: '90px', maxHeight: '90px', minWidth: '90px', minHeight: '90px'}}
-                        // onClick, call understandingToReducer to try and dispatch data and move to next page, passing it
-                        // through the inputValidation module function first to ensure input is within necessary paramaters
-                        onClick={() => understandingToReducer(inputValidation(event, understanding))}
-                    >
-                        Next
-                    </Button>
+                    <div className="next-button">
+                        <Button
+                            variant="contained"
+                            style={{maxWidth: '90px', maxHeight: '90px', minWidth: '90px', minHeight: '90px'}}
+                            // onClick, call understandingToReducer to try and dispatch data and move to next page, passing it
+                            // through the inputValidation module function first to ensure input is within necessary paramaters
+                            onClick={() => understandingToReducer(inputValidation(event, understanding))}
+                        >
+                            Next
+                        </Button>
+                    </div>
                 </div>
 
             </div>

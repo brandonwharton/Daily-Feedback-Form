@@ -4,8 +4,25 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 // material-UI components
 import Button from '@material-ui/core/Button';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { withStyles } from "@material-ui/core";
 // components
 import BackButton from '../BackButton/BackButton';
+
+// Linear progress bar styling
+const BorderLinearProgress = withStyles((theme) => ({
+    root: {
+        height: 10,
+        borderRadius: 5,
+    },
+    colorPrimary: {
+        backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    },
+    bar: {
+        borderRadius: 5,
+        backgroundColor: '#1a90ff',
+    },
+}))(LinearProgress);
 
 
 
@@ -43,6 +60,7 @@ function ReviewPage () {
 
     return (
         <div>
+            <BorderLinearProgress variant="determinate" value={100}/>
             <h2>Review Your Feedback</h2>
             <h3>Feelings: {feedbackData.feeling}</h3>
             <h3>Understanding: {feedbackData.understanding}</h3>

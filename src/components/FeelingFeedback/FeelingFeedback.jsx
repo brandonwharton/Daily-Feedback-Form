@@ -15,7 +15,7 @@ function FeelingFeedback () {
     const dispatch = useDispatch();
     // useHistory to navigate to other routes
     const history = useHistory();
-    // state for tracking changes to TextField
+    // local states
     const [feeling, setFeeling] = useState('');
     const [alert, setAlert] = useState(false);
     // bring in feedbackData reducer to display previous feedback selection if applicable
@@ -32,8 +32,9 @@ function FeelingFeedback () {
 
     // once feeling data has been validated, dispatch to reducer and navigate to next page
     const feelingToReducer = (rating) => {
-        // break out of function if input wasn't validated
+        // if input wasn't valid adjust local alert state and do not dispatch or navigate
         if (!rating) {
+            // set alert state to true to conditionally render an alert message
             setAlert(true);
             return;
         }
@@ -54,9 +55,10 @@ function FeelingFeedback () {
             <p>5: Feeling great!</p>
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
             {feedbackData.feeling && <h3>Previous Choice: {feedbackData.feeling}</h3>}
+            {/* Conditionally render an alert message if the alert state becomes true */}
+            {alert && <Alert severity="error">Entry must be a number between 1 and 5</Alert>}
             {/* onSubmit, call feelingToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
-            {alert && <Alert severity="error">Entry must be a number between 1 and 5</Alert>}
             <FormControl onSubmit={() => feelingToReducer(inputValidation(event, feeling))} required>
                 <TextField 
                     required

@@ -6,6 +6,8 @@ import { useHistory } from "react-router";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
+// components
+import BackButton from '../BackButton/BackButton';
 
 
 function UnderstandingFeedback () {
@@ -18,7 +20,7 @@ function UnderstandingFeedback () {
     // bring in data from feedbackData reducer to autofill input value on back navigation
     const feedbackData = useSelector(store => store.feedbackData);
     
-    
+
     const handleChange = (event) => {
         // update local state with value in TextField
         setUnderstanding(event.target.value);
@@ -75,13 +77,7 @@ function UnderstandingFeedback () {
                     Next
                 </Button>
             </FormControl>
-            <Button
-                variant="contained"
-                color="secondary"
-                onClick={navigateBack}
-            >
-                Back
-            </Button>
+            <BackButton navigateBack={navigateBack}/>
 
         </div>
 

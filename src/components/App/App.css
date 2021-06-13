@@ -4,7 +4,7 @@
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: rgba(106, 167, 106, 0.746);
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -12,7 +12,7 @@
 }
 
 .App-title {
-  font-size: 2em;
+  font-size: 2.2em;
 }
 
 .App-intro {
@@ -20,9 +20,23 @@
 }
 
 h4 {
-  font-style: italic;
+  font-size: .9em;
 }
 
 .main-feedback-form {
-  margin: 0 15%;
+  margin: 0 10%;
+}
+
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.feedback-col-1, .feedback-col-3 {
+  width: 25%
+}
+
+.feedback-col-2 {
+  width: 50%
 }

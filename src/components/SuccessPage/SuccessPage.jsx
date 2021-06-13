@@ -27,7 +27,7 @@ function SuccessPage () {
 
     return (
         <div>
-            <h2>Your Feedback has been Submitted!</h2>
+            <h2>Your feedback has been submitted!</h2>
             <Button
                 variant="contained"
                 color="primary"

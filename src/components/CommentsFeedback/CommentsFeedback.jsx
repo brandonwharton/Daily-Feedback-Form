@@ -71,7 +71,7 @@ function CommentsFeedback () {
             <BorderLinearProgress variant="determinate" value={75} />
             <h2>Do you have any additional comments you'd like to share?</h2>
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
-            {feedbackData.comments && <h3>Previous Comments: {feedbackData.comments}</h3> }
+            {feedbackData.comments && <h3>( Previous Comments: {feedbackData.comments} )</h3> }
             {/* onSubmit, call commentsToReducer to dispatch data and move to next page */}
             <FormControl onSubmit={commentsToReducer}>
                 <TextField 

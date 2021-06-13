@@ -17,8 +17,8 @@ function App() {
     <Router>
       <div className='App'>
         <header className='App-header'>
-          <h1 className='App-title'>Your feedback is important</h1>
-          <h4>Thank you!</h4>
+          <h1 className='App-title'>Help Us Help You</h1>
+          <h4>Thank you for your feedback!</h4>
         </header>
         <main className="main-feedback-form">
         <Route path='/' exact>

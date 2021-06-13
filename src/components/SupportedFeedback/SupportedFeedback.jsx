@@ -84,7 +84,7 @@ function SupportedFeedback () {
             <p>5: I felt like I always had someone behind me if I needed it!</p>
 
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
-            {feedbackData.support && <h3>Previous Choice: {feedbackData.support}</h3> }
+            {feedbackData.support && <h3>( Previous Choice: {feedbackData.support} )</h3> }
             {/* Conditionally render an alert message if the alert state becomes true */}
             {alert && <Alert severity="error" variant="outlined">Entry must be a number between 1 and 5</Alert>}
 

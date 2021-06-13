@@ -11,6 +11,7 @@ function BackButton({navigateBack}) {
             variant="contained"
             color="secondary"
             onClick={navigateBack}
+            style={{maxWidth: '90px', maxHeight: '90px', minWidth: '90px', minHeight: '90px'}}
         >
         Back
         </Button>

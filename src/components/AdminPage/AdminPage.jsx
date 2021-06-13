@@ -34,7 +34,7 @@ function AdminPage() {
     const [feedback, setFeedback] = useState([]);
     // local state for alert dialogue
     const [open, setOpen] = useState(false);
-    const [deleteId, setDeleteId] = useState('');
+    const [entryId, setEntryId] = useState('');
     const [isFlagged, setIsFlagged] = useState(false);
 
     useEffect(() => {
@@ -58,7 +58,7 @@ function AdminPage() {
     // opens confirmation dialog when clicking on delete button
     const handleDeleteOpen = (id) => {
         // save id of clicked delete button and open delete confirmation dialog
-        setDeleteId(id);
+        setEntryId(id);
         setOpen(true);
     }
 
@@ -75,7 +75,7 @@ function AdminPage() {
         event.preventDefault();
 
         // axios DELETE request
-        axios.delete(`/feedback/${deleteId}`)
+        axios.delete(`/feedback/${entryId}`)
             .then(response => {
                 // refresh DOM
                 setOpen(false);
@@ -87,6 +87,22 @@ function AdminPage() {
             });
     }
 
+
+    const toggleFlagged = (event, id, flagged) => {
+        // keep page from refreshing on click
+        event.preventDefault();
+        console.log('Clicked', id, flagged);
+        // PUT request to toggle an item as flagged
+        axios.put(`/feedback/${id}`, {newFlag: !flagged})
+        .then(response => {
+            // refresh DOM
+            getFeedback();
+        })
+        .catch(err => {
+            alert('Problem with delete request, please try again');
+            console.log(err);
+        });
+    }
 
     console.log(feedback);
     return (
@@ -139,7 +155,15 @@ function AdminPage() {
                                     </DialogActions>
                                 </Dialog>
                             </TableCell>
-                            <TableCell></TableCell>
+                            <TableCell>
+                                <Button
+                                    variant="contained"
+                                    color="secondary"
+                                    onClick={() => toggleFlagged(event, entry.id, entry.flagged)}
+                                >
+                                    Flag
+                                </Button>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

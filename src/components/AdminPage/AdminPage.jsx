@@ -11,11 +11,19 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Delete from '@material-ui/icons/Delete';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 function AdminPage() {
     // local state to hold feedback
     const [feedback, setFeedback] = useState([]);
+    // local state for alert dialogue
+    const [open, setOpen] = useState(false);
+    const [deleteId, setDeleteId] = useState('');
 
     useEffect(() => {
         getFeedback();
@@ -35,14 +43,28 @@ function AdminPage() {
             })
     }
 
+    const handleDeleteOpen = (id) => {
+        // save id of clicked delete button and open delete confirmation dialog
+        setDeleteId(id);
+        setOpen(true);
+    }
+
+    const handleDeleteClose = () => {
+        // close confirmation dialog
+        setOpen(false);
+    }
+
+
     // click listener for delete button
-    const handleDelete = (event, id) => {
+    const deleteEntry = (event) => {
         // keep page from refreshing on click
         event.preventDefault();
+
         // axios DELETE request
-        axios.delete(`/feedback/${id}`)
+        axios.delete(`/feedback/${deleteId}`)
             .then(response => {
                 // refresh DOM
+                setOpen(false);
                 getFeedback();
             })
             .catch(err => {
@@ -74,10 +96,34 @@ function AdminPage() {
                             <TableCell>
                                 <Button
                                     variant="contained"
-                                    onClick={() => handleDelete(event, entry.id)}
+                                    onClick={() => handleDeleteOpen(entry.id)}
+                                    // onClick={() => handleDelete(event, entry.id)}
                                 >
                                     <Delete />
                                 </Button>
+                                <Dialog
+                                    open={open}
+                                    onClose={handleDeleteClose}
+                                    aria-labelledby="alert-dialog-title"
+                                    aria-describedby="alert-dialog-description"
+                                >
+                                    <DialogTitle id="alert-dialog-title">
+                                        {"Delete this feedback entry?"}
+                                    </DialogTitle>
+                                    <DialogContent>
+                                        <DialogContentText id="alert-dialog-description">
+                                            This cannot be undone.
+                                        </DialogContentText>
+                                    </DialogContent>
+                                    <DialogActions>
+                                        <Button onClick={handleDeleteClose}>
+                                            Cancel
+                                        </Button>
+                                        <Button onClick={deleteEntry}>
+                                            Delete
+                                        </Button>
+                                    </DialogActions>
+                                </Dialog>
                             </TableCell>
                             <TableCell></TableCell>
                         </TableRow>

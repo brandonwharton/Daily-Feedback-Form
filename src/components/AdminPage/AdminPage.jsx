@@ -9,6 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 
 function AdminPage() {
@@ -33,6 +34,14 @@ function AdminPage() {
             })
     }
 
+    // click listener for delete button
+    const handleDelete = (event) => {
+        // keep page from refreshing on click
+        event.preventDefault();
+        console.log('clicked');
+    }
+
+
     console.log(feedback);
     return (
         <TableContainer component={Paper}>
@@ -52,7 +61,14 @@ function AdminPage() {
                             <TableCell>{entry.understanding}</TableCell>
                             <TableCell>{entry.support}</TableCell>
                             <TableCell>{entry.comments}</TableCell>
-                            <TableCell></TableCell>
+                            <TableCell>
+                                <Button
+                                    variant="contained"
+                                    onClick={handleDelete}
+                                >
+                                    Delete
+                                </Button>
+                            </TableCell>
                             <TableCell></TableCell>
                         </TableRow>
                     ))}

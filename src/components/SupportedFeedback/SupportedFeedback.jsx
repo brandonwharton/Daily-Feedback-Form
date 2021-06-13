@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Alert from '@material-ui/lab/Alert';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from "@material-ui/core";
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 // components
 import BackButton from '../BackButton/BackButton';
 
@@ -29,7 +30,7 @@ const BorderLinearProgress = withStyles((theme) => ({
 
 
 
-function SupportedFeedback () {
+function SupportedFeedback() {
     // set up dispatch to reducers
     const dispatch = useDispatch();
     // useHistory to navigate to other routes
@@ -39,7 +40,7 @@ function SupportedFeedback () {
     const [alert, setAlert] = useState(false);
     // bring in feedbackData reducer to display previous feedback selection if applicable
     const feedbackData = useSelector(store => store.feedbackData);
-    
+
 
     const handleChange = (event) => {
         // update local state with value in TextField
@@ -79,34 +80,49 @@ function SupportedFeedback () {
     return (
         <div>
             <BorderLinearProgress variant="determinate" value={50} />
-            <h2>How well did you feel supported today?</h2>
-            <p>1: I felt like I was entirely on my own.</p>
-            <p>5: I felt like I always had someone behind me if I needed it!</p>
+            <div className="feedback-container">
+                <div className="feedback-col-1">
+                    <div className="back-button">
+                        <BackButton className="back-button" navigateBack={navigateBack} />
+                    </div>
+                </div>
+                <div className="feedback-col-2">
+                    <h2>How well did you feel supported today?</h2>
+                    <p>1: I felt like I was entirely on my own.</p>
+                    <p>5: I felt like I always had someone behind me if I needed it!</p>
 
-            {/* Conditonally render the user's previous selection if they navigated back to this page */}
-            {feedbackData.support && <h3>Previous Choice: {feedbackData.support}</h3> }
-            {/* Conditionally render an alert message if the alert state becomes true */}
-            {alert && <Alert severity="error" variant="outlined">Entry must be a number between 1 and 5</Alert>}
+                    {/* Conditonally render the user's previous selection if they navigated back to this page */}
+                    {feedbackData.support && <h3>( Previous Choice: {feedbackData.support} )</h3>}
+                    {/* Conditionally render an alert message if the alert state becomes true */}
+                    {alert && <Alert severity="error" variant="outlined">Entry must be a number between 1 and 5</Alert>}
 
-            {/* onSubmit, call supportedToReducer to try and dispatch data and move to next page */}
-            {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
-            <FormControl onSubmit={() => supportedToReducer(inputValidation(event, supported))}>
-                <TextField 
-                    label="supported"
-                    type="number"
-                    id="supported-field"
-                    onChange={handleChange}
-                />
-                <Button
-                    variant="contained"
-                    // onClick, call supportedToReducer to try and dispatch data and move to next page, passing it
-                    // through the inputValidation module function first to ensure input is within necessary paramaters
-                    onClick={() => supportedToReducer(inputValidation(event, supported))}
-                >
-                    Next
-                </Button>
-            </FormControl> 
-            <BackButton navigateBack={navigateBack}/>
+                    {/* onSubmit, call supportedToReducer to try and dispatch data and move to next page */}
+                    {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
+                    <FormControl onSubmit={() => supportedToReducer(inputValidation(event, supported))}>
+                        <TextField
+                            label="supported"
+                            type="number"
+                            id="supported-field"
+                            helperText="Enter selection here"
+                            onChange={handleChange}
+                        />
+
+                    </FormControl>
+                </div>
+                <div className="feedback-col-3">
+                    <div className="next-button">
+                        <Button
+                            variant="contained"
+                            style={{maxWidth: '90px', maxHeight: '90px', minWidth: '90px', minHeight: '90px'}}
+                            // onClick, call supportedToReducer to try and dispatch data and move to next page, passing it
+                            // through the inputValidation module function first to ensure input is within necessary paramaters
+                            onClick={() => supportedToReducer(inputValidation(event, supported))}
+                        >
+                            <ArrowForwardIos />
+                        </Button>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

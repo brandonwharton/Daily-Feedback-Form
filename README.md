@@ -2,6 +2,8 @@
 
 ## Description
 
+Duration: Two-day Sprint
+
 The goal of this project was to create a feedback collection form using React and Redux. The requirements were that 
 each of the four feedback views existing on their own component with navigation routes to move to the next one. The feedback
 for the first three views needed to be validated and were required, while the fourth comment view was optional. It was required

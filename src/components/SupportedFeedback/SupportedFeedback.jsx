@@ -27,7 +27,7 @@ function SupportedFeedback () {
     }
 
     // bring in inputValidation module for ensuring rating data meets necessary parameters
-    const inputValidation = require('../../modules/inputValidation.js');
+    const inputValidation = require('../../modules/inputValidation.jsx');
 
     // once supported data has been validated, dispatch to reducer and navigate to next page
     const supportedToReducer = (rating) => {

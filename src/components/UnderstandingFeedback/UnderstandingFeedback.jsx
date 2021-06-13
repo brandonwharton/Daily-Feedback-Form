@@ -27,7 +27,7 @@ function UnderstandingFeedback () {
     }
     
     // bring in inputValidation module for ensuring rating data meets necessary parameters
-    const inputValidation = require('../../modules/inputValidation.js');
+    const inputValidation = require('../../modules/inputValidation.jsx');
 
     // once understanding data has been validated, dispatch to reducer and navigate to next page
     const understandingToReducer = (rating) => {

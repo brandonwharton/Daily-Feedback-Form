@@ -64,11 +64,11 @@ To Do:
 - [ ] SuccessPage 
     - [x] Submission success message
         - [ ] Make as an alert?
-    - [ ] New Survey Button
-        - [ ] Reset feedbackData reducer state: 'RESET_FEEDBACK'
-        - [ ] Button useHistory for '/' route
+    - [x] New Survey Button
+        - [x] Reset feedbackData reducer state: 'RESET_FEEDBACK'
+        - [x] Button useHistory for '/' route
 
-- [] make a feedback router, adjust server.js with router info
+- [ ] make a feedback router, adjust server.js with router info
     - [x] '/feedback' for axios requests
     - [x] POST route
     - [ ] STRETCH: DELETE route

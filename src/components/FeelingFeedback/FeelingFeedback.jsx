@@ -1,11 +1,12 @@
 // hooks
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 // material-UI components
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
+
 
 
 function FeelingFeedback () {
@@ -15,11 +16,15 @@ function FeelingFeedback () {
     const history = useHistory();
     // state for tracking changes to TextField
     const [feeling, setFeeling] = useState('');
+    // bring in feedbackData reducer to display previous feedback selection if applicable
+    const feedbackData = useSelector(store => store.feedbackData);
+
     
     const handleChange = (event) => {
         // update local state with value in TextField
         setFeeling(event.target.value);
     }
+    
     // bring in inputValidation module for ensuring rating data meets necessary parameters
     const inputValidation = require('../../modules/inputValidation.js');
 
@@ -38,18 +43,20 @@ function FeelingFeedback () {
         history.push('/understanding');
     }
 
+
     return (
         <div>
             <h2>How are you feeling after today?</h2>
             <p>1: Not feeling good at all.</p>
             <p>5: Feeling great!</p>
+            {/* Conditonally render the user's previous selection if they navigated back to this page */}
+            {feedbackData.feeling && <h3>Previous Choice: {feedbackData.feeling}</h3> }
             {/* onSubmit, call feelingToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
             <FormControl onSubmit={() => feelingToReducer(inputValidation(event, feeling))} required>
                 <TextField 
                     required
                     label="feeling"
-                    defaultValue="required"
                     type="number"
                     id="feeling-field"
                     // rules={{

@@ -20,6 +20,7 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
         </header>
+        <main className="main-feedback-form">
         <Route path='/' exact>
           <FeelingFeedback />
         </Route>
@@ -38,6 +39,7 @@ function App() {
         <Route path='/success'>
           <SuccessPage />
         </Route>
+        </main>
       </div>
     </Router>
   );

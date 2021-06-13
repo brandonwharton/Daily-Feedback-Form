@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Lexend', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .App-header {
@@ -20,4 +21,8 @@
 
 h4 {
   font-style: italic;
+}
+
+.main-feedback-form {
+  margin: 0 15%;
 }

@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 // material-UI components
 import Button from '@material-ui/core/Button';
+// components
+import BackButton from '../BackButton/BackButton';
 
 
 
@@ -31,6 +33,14 @@ function ReviewPage () {
 
     }
 
+    // on click of the Back button, return to FeelingFeedback component page
+    const navigateBack = (event) => {
+        // keep page from refreshing on click
+        event.preventDefault();
+        // navigate back
+        history.push('/comments');
+    }
+
     return (
         <div>
             <h2>Review Your Feedback</h2>
@@ -45,6 +55,7 @@ function ReviewPage () {
             >
                 Submit
             </Button>
+            <BackButton navigateBack={navigateBack}/>
         </div>
     )
 }

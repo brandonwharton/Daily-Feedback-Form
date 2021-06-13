@@ -78,10 +78,7 @@ function UnderstandingFeedback () {
                 </Button>
             </FormControl>
             <BackButton navigateBack={navigateBack}/>
-
         </div>
-
-
     )
 }
 export default UnderstandingFeedback;

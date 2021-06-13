@@ -1,6 +1,6 @@
 // hooks
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 // material-UI components
 import Button from '@material-ui/core/Button';
@@ -15,8 +15,7 @@ function FeelingFeedback () {
     const history = useHistory();
     // state for tracking changes to TextField
     const [feeling, setFeeling] = useState('');
-    // bring in data from feedbackData reducer to autofill input value on back navigation
-    const feedbackData = useSelector(store => store.feedbackData);
+
 
     
     const handleChange = (event) => {
@@ -52,8 +51,6 @@ function FeelingFeedback () {
                 <TextField 
                     required
                     label="feeling"
-                    // set a default value using the feedbackData reducer value
-                    defaultValue={feedbackData.feeling}
                     type="number"
                     id="feeling-field"
                     // rules={{

@@ -6,6 +6,9 @@ import { useHistory } from "react-router";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
+// components
+import BackButton from '../BackButton/BackButton';
+
 
 function SupportedFeedback () {
     // set up dispatch to reducers
@@ -37,13 +40,15 @@ function SupportedFeedback () {
         history.push('/comments');
     }
 
-    // on click of the Back button, return to FeelingFeedback component page
+    // on click of the Back button, return to UnderstandingFeedback component page
     const navigateBack = (event) => {
         // keep page from refreshing on click
         event.preventDefault();
         // navigate back
         history.push('/understanding');
     }
+
+
 
     return (
         <div>
@@ -69,8 +74,8 @@ function SupportedFeedback () {
                 >
                     Next
                 </Button>
-            </FormControl>
-
+            </FormControl> 
+            <BackButton navigateBack={navigateBack}/>
         </div>
 
 

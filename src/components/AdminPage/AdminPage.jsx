@@ -35,10 +35,19 @@ function AdminPage() {
     }
 
     // click listener for delete button
-    const handleDelete = (event) => {
+    const handleDelete = (event, id) => {
         // keep page from refreshing on click
         event.preventDefault();
-        console.log('clicked');
+        // axios DELETE request
+        axios.delete(`/feedback/${id}`)
+            .then(response => {
+                // refresh DOM
+                getFeedback();
+            })
+            .catch(err => {
+                alert('Problem with delete request, please try again');
+                console.log(err);
+            });
     }
 
 
@@ -64,7 +73,7 @@ function AdminPage() {
                             <TableCell>
                                 <Button
                                     variant="contained"
-                                    onClick={handleDelete}
+                                    onClick={() => handleDelete(event, entry.id)}
                                 >
                                     Delete
                                 </Button>

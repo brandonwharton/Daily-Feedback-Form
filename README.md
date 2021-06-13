@@ -15,7 +15,8 @@ added a progress bar above the feedback form that tracks the user's progress as 
 navigable by a /admin route which displays the full list of feedback from the database as a table. There's an option to delete feedback from
 the database on the admin page which prompts a confirmation before sending the delete request.
 
-You can view this project on Heroku [here](https://frozen-meadow-03062.herokuapp.com/#/admin)
+You can view this project on Heroku [here](https://frozen-meadow-03062.herokuapp.com/#/)
+For the admin section click [here](https://frozen-meadow-03062.herokuapp.com/#/admin)
 
 ## Screen Shot
 

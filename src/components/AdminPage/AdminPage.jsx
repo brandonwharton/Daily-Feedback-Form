@@ -10,6 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import Delete from '@material-ui/icons/Delete';
 
 
 function AdminPage() {
@@ -75,7 +76,7 @@ function AdminPage() {
                                     variant="contained"
                                     onClick={() => handleDelete(event, entry.id)}
                                 >
-                                    Delete
+                                    <Delete />
                                 </Button>
                             </TableCell>
                             <TableCell></TableCell>

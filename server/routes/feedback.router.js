@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
     const queryText = `SELECT * FROM "feedback"`
     // GET data from DB
     pool.query(queryText)
-        .then(response => {
+        .then(result => {
             console.log('GET from DB successful');
-            res.send(response.rows);
+            res.send(result.rows);
         })
         .catch(err => {
             console.log('Server error with GET request to DB', err);
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
     VALUES ($1, $2, $3, $4);`;
     // send supplied feedback data to the DB
     pool.query(queryText, values)
-        .then(response => {
+        .then(result => {
             console.log('POST to DB successful');
             res.sendStatus(201);
         })

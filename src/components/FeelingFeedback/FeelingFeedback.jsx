@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Alert from '@material-ui/lab/Alert';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 import { withStyles } from '@material-ui/core';
 
 
@@ -94,6 +95,7 @@ function FeelingFeedback() {
                             label="feeling"
                             type="number"
                             id="feeling-field"
+                            helperText="Enter selection here"
                             onChange={handleChange}
                         />
                     </FormControl>
@@ -107,7 +109,7 @@ function FeelingFeedback() {
                             // through the inputValidation module function first to ensure input is within necessary paramaters
                             onClick={() => feelingToReducer(inputValidation(event, feeling))}
                         >
-                            Next
+                            <ArrowForwardIos />
                         </Button>
                     </div>
                 </div>

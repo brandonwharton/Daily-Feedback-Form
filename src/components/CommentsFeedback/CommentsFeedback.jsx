@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from "@material-ui/core";
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 // components
 import BackButton from '../BackButton/BackButton';
 
@@ -97,7 +98,7 @@ function CommentsFeedback() {
                             // onClick, call commentsToReducer to dispatch data and move to next page
                             onClick={commentsToReducer}
                         >
-                            Next
+                              <ArrowForwardIos />
                         </Button>
                     </div>
                 </div>

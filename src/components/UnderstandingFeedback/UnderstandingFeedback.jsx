@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Alert from '@material-ui/lab/Alert';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from "@material-ui/core";
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 // components
 import BackButton from '../BackButton/BackButton';
 
@@ -101,6 +102,7 @@ function UnderstandingFeedback() {
                             label="understanding"
                             type="number"
                             id="understanding-field"
+                            helperText="Enter selection here"
                             onChange={handleChange}
                         />
                     </FormControl>
@@ -114,7 +116,7 @@ function UnderstandingFeedback() {
                             // through the inputValidation module function first to ensure input is within necessary paramaters
                             onClick={() => understandingToReducer(inputValidation(event, understanding))}
                         >
-                            Next
+                            <ArrowForwardIos />
                         </Button>
                     </div>
                 </div>

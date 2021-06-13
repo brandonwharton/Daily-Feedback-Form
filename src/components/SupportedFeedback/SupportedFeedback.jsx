@@ -9,6 +9,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Alert from '@material-ui/lab/Alert';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from "@material-ui/core";
+import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos';
 // components
 import BackButton from '../BackButton/BackButton';
 
@@ -102,6 +103,7 @@ function SupportedFeedback() {
                             label="supported"
                             type="number"
                             id="supported-field"
+                            helperText="Enter selection here"
                             onChange={handleChange}
                         />
 
@@ -116,7 +118,7 @@ function SupportedFeedback() {
                             // through the inputValidation module function first to ensure input is within necessary paramaters
                             onClick={() => supportedToReducer(inputValidation(event, supported))}
                         >
-                             Next
+                            <ArrowForwardIos />
                         </Button>
                     </div>
                 </div>

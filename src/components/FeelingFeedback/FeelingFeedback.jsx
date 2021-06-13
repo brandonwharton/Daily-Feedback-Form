@@ -11,7 +11,6 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core';
 
 
-import './FeelingFeedback.css';
 
 
 

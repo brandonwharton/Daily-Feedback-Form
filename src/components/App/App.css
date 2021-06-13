@@ -47,3 +47,8 @@ h4 {
 .back-button, .next-button {
   margin: 25%
 }
+
+.spacing-div {
+  width: 90px;
+  height: 90px; 
+}

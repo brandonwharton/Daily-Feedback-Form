@@ -61,19 +61,31 @@ function ReviewPage () {
     return (
         <div>
             <BorderLinearProgress variant="determinate" value={100}/>
-            <h2>Review Your Feedback</h2>
-            <h3>Feelings: {feedbackData.feeling}</h3>
-            <h3>Understanding: {feedbackData.understanding}</h3>
-            <h3>Supported: {feedbackData.support}</h3>
-            <h3>Comments: {feedbackData.comments}</h3>
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-            >
-                Submit
-            </Button>
-            <BackButton navigateBack={navigateBack}/>
+            <div className="feedback-container">
+                <div className="feedback-col-1">
+                    <div className="back-button">
+                        <BackButton className="back-button" navigateBack={navigateBack} />
+                    </div>
+                </div>
+            <div className="feedback-col-2">
+            
+                <h2>Review Your Feedback</h2>
+                <h3>Feelings: {feedbackData.feeling}</h3>
+                <h3>Understanding: {feedbackData.understanding}</h3>
+                <h3>Supported: {feedbackData.support}</h3>
+                <h3>Comments: {feedbackData.comments}</h3>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSubmit}
+                >
+                    Submit
+                </Button>
+            </div>
+            <div className="feedback-col-3">
+                <div className="spacing-div"></div>
+            </div>
+            </div>
         </div>
     )
 }

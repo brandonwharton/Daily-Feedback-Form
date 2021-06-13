@@ -40,4 +40,23 @@ router.post('/', (req, res) => {
         })
 })
 
+
+// DELETE route from the admin page to remove a DB feedback entry
+router.delete('/:id', (req, res) => {
+    // hold the id of feedback to be deleted
+    const feedbackId = req.params.id;
+    // save a sanitized SQL query to send
+    const queryText = `DELETE FROM "feedback" WHERE "id" = $1;`;
+    // send DELETE request to DB
+    pool.query(queryText, [feedbackId])
+        .then(result => {
+            console.log('DELETE to DB successful');
+            res.sendStatus(200);
+        })
+        .catch(err => {
+            console.log('Server error with DELETE request to DB',err);
+            res.sendStatus(500);
+        });
+})
+
 module.exports = router;

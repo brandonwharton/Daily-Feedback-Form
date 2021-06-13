@@ -19,6 +19,39 @@ the database on the admin page which prompts a confirmation before sending the d
 
 ![app screenshot](/wireframes/screenshots/feedback-form-screenshot.png)
 
-Your project description goes here. What problem did you solve? How did you solve it?
+## Prerequisites
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+- [Node.js](https://nodejs.org/en/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Homebrew](https://brew.sh/)
+
+## Installation
+
+1. Using provided database.sql file, use a database manager of your choice ([Postico](https://eggerapps.at/postico/)) to create a local
+database with the listed table name and structure.
+2. Begin running your local database by running `brew services start postgresql` in a terminal.
+    - Stop database by running `brew services stop postgresql` in that same terminal.
+3. Navigate to the root directory of the project in another terminal.
+4. Run `npm install` in the terminal to install dependencies locally.
+5. Run `npm run server` in your terminal to start the project's local server.
+    - Stop the local server by pressing `ctrl-c`.
+6. Run `npm run client` in another terminal to start the client page.
+    - Stop the local server by pressing `ctrl-c`.    
+7. Open a browser window and navigate to [http://localhost:3000/](http://localhost:3000/) to use the app.
+
+## Built With
+
+- React
+- Redux
+- Node.js
+- PostgreSQL
+- Axios
+- Express
+- Material UI
+
+## Acknowledgement
+
+As always, a huge thank you to [Prime Digital Academy](https://www.primeacademy.io/) for the continued instruction
+and inspiration in bringing this projects to life.
+
+

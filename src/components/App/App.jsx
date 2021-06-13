@@ -9,6 +9,7 @@ import SupportedFeedback from '../SupportedFeedback/SupportedFeedback';
 import CommentsFeedback from '../CommentsFeedback/CommentsFeedback';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import SuccessPage from '../SuccessPage/SuccessPage';
+import AdminPage from '../AdminPage/AdminPage';
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path='/success'>
           <SuccessPage />
+        </Route>
+        <Route path='/admin'>
+          <AdminPage />
         </Route>
         </main>
       </div>

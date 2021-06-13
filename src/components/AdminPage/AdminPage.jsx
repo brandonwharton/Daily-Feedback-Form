@@ -40,11 +40,23 @@ function AdminPage() {
                 <TableHead>
                     <TableCell>Feeling</TableCell>
                     <TableCell>Understanding</TableCell>
-                    <TableCell>Support</TableCell>
+                    <TableCell>Supported</TableCell>
                     <TableCell>Comments</TableCell>
                     <TableCell></TableCell>
                     <TableCell></TableCell>
                 </TableHead>
+                <TableBody>
+                    {feedback.map(entry => (
+                        <TableRow key={entry.id}>
+                            <TableCell>{entry.feeling}</TableCell>
+                            <TableCell>{entry.understanding}</TableCell>
+                            <TableCell>{entry.support}</TableCell>
+                            <TableCell>{entry.comments}</TableCell>
+                            <TableCell></TableCell>
+                            <TableCell></TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
             </Table>
         </TableContainer>
     )

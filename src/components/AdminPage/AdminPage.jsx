@@ -1,6 +1,7 @@
 import axios from "axios";
 // hooks
 import { useEffect, useState } from "react";
+import { withStyles } from '@material-ui/core/styles'
 // material-UI components
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -16,6 +17,16 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+
+
+// change color of table head
+const DarkTableCell = withStyles((theme) => ({
+    head: {
+        backgroundColor: theme.palette.success.dark,
+        color: theme.palette.common.white,
+    },
+}))(TableCell);
+
 
 
 function AdminPage() {
@@ -43,14 +54,16 @@ function AdminPage() {
             })
     }
 
+    // opens confirmation dialog when clicking on delete button
     const handleDeleteOpen = (id) => {
         // save id of clicked delete button and open delete confirmation dialog
         setDeleteId(id);
         setOpen(true);
     }
 
+    // closes delete confirmation dialog after making a selection
     const handleDeleteClose = () => {
-        // close confirmation dialog
+        // set state to close confirmation dialog
         setOpen(false);
     }
 
@@ -79,12 +92,12 @@ function AdminPage() {
         <TableContainer component={Paper}>
             <Table>
                 <TableHead>
-                    <TableCell>Feeling</TableCell>
-                    <TableCell>Understanding</TableCell>
-                    <TableCell>Supported</TableCell>
-                    <TableCell>Comments</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell></TableCell>
+                    <DarkTableCell>Feeling</DarkTableCell>
+                    <DarkTableCell>Understanding</DarkTableCell>
+                    <DarkTableCell>Supported</DarkTableCell>
+                    <DarkTableCell>Comments</DarkTableCell>
+                    <DarkTableCell></DarkTableCell>
+                    <DarkTableCell></DarkTableCell>
                 </TableHead>
                 <TableBody>
                     {feedback.map(entry => (

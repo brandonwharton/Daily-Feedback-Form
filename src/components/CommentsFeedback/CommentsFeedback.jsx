@@ -1,6 +1,6 @@
 // hooks
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 // material-UI components
 import Button from '@material-ui/core/Button';
@@ -17,6 +17,9 @@ function CommentsFeedback () {
     const history = useHistory();
     // state for tracking changes to TextField
     const [comments, setComments] = useState('');
+    // bring in feedbackData reducer to display previous feedback selection if applicable
+    const feedbackData = useSelector(store => store.feedbackData);
+    
     
     const handleChange = (event) => {
         // update local state with value in TextField
@@ -48,6 +51,8 @@ function CommentsFeedback () {
     return (
         <div>
             <h2>Do you have any additional comments you'd like to share?</h2>
+            {/* Conditonally render the user's previous selection if they navigated back to this page */}
+            {feedbackData.comments && <h3>Previous Comments: {feedbackData.comments}</h3> }
             {/* onSubmit, call commentsToReducer to dispatch data and move to next page */}
             <FormControl onSubmit={commentsToReducer}>
                 <TextField 

@@ -17,7 +17,7 @@ function UnderstandingFeedback () {
     const history = useHistory();
     // state for tracking changes to TextField
     const [understanding, setUnderstanding] = useState('');
-    // bring in data from feedbackData reducer to autofill input value on back navigation
+    // bring in feedbackData reducer to display previous feedback selection if applicable
     const feedbackData = useSelector(store => store.feedbackData);
     
 
@@ -25,6 +25,7 @@ function UnderstandingFeedback () {
         // update local state with value in TextField
         setUnderstanding(event.target.value);
     }
+    
     // bring in inputValidation module for ensuring rating data meets necessary parameters
     const inputValidation = require('../../modules/inputValidation.js');
 
@@ -57,6 +58,8 @@ function UnderstandingFeedback () {
             <h2>How well did you understand today's material?</h2>
             <p>1: I'm having a lot of trouble with this.</p>
             <p>5: I could teach somebody this material.</p>
+            {/* Conditonally render the user's previous selection if they navigated back to this page */}
+            {feedbackData.understanding && <h3>Previous Choice: {feedbackData.understanding}</h3> }
             {/* onSubmit, call understandingToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
             <FormControl onSubmit={() => understandingToReducer(inputValidation(event, understanding))} required>

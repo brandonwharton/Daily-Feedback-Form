@@ -6,8 +6,26 @@ import { useHistory } from "react-router";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { withStyles } from "@material-ui/core";
 // components
 import BackButton from '../BackButton/BackButton';
+
+// Linear progress bar styling
+const BorderLinearProgress = withStyles((theme) => ({
+    root: {
+        height: 10,
+        borderRadius: 5,
+    },
+    colorPrimary: {
+        backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    },
+    bar: {
+        borderRadius: 5,
+        backgroundColor: '#1a90ff',
+    },
+}))(LinearProgress);
+
 
 
 function CommentsFeedback () {
@@ -50,6 +68,7 @@ function CommentsFeedback () {
 
     return (
         <div>
+            <BorderLinearProgress variant="determinate" value={75} />
             <h2>Do you have any additional comments you'd like to share?</h2>
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
             {feedbackData.comments && <h3>Previous Comments: {feedbackData.comments}</h3> }

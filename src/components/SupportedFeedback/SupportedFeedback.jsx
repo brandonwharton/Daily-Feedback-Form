@@ -7,8 +7,26 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Alert from '@material-ui/lab/Alert';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import { withStyles } from "@material-ui/core";
 // components
 import BackButton from '../BackButton/BackButton';
+
+// Linear progress bar styling
+const BorderLinearProgress = withStyles((theme) => ({
+    root: {
+        height: 10,
+        borderRadius: 5,
+    },
+    colorPrimary: {
+        backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    },
+    bar: {
+        borderRadius: 5,
+        backgroundColor: '#1a90ff',
+    },
+}))(LinearProgress);
+
 
 
 function SupportedFeedback () {
@@ -60,6 +78,7 @@ function SupportedFeedback () {
 
     return (
         <div>
+            <BorderLinearProgress variant="determinate" value={50} />
             <h2>How well did you feel supported today?</h2>
             <p>1: I felt like I was entirely on my own.</p>
             <p>5: I felt like I always had someone behind me if I needed it!</p>

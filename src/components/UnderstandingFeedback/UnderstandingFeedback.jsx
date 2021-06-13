@@ -66,8 +66,8 @@ function UnderstandingFeedback () {
             {/* Conditonally render the user's previous selection if they navigated back to this page */}
             {feedbackData.understanding && <h3>Previous Choice: {feedbackData.understanding}</h3> }
             {/* Conditionally render an alert message if the alert state becomes true */}
-            {alert && <Alert severity="error">Entry must be a number between 1 and 5</Alert>}
-            
+            {alert && <Alert severity="error" variant="outlined">Entry must be a number between 1 and 5</Alert>}
+
             {/* onSubmit, call understandingToReducer to try and dispatch data and move to next page */}
             {/* Pass it through the inputValidation module function first to ensure input is within necessary paramaters */}
             <FormControl onSubmit={() => understandingToReducer(inputValidation(event, understanding))}>

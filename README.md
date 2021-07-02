@@ -18,7 +18,7 @@ navigable by a /admin route which displays the full list of feedback from the da
 the database on the admin page which prompts a confirmation before sending the delete request.
 
 You can view this project on Heroku [here](https://frozen-meadow-03062.herokuapp.com/#/).
-For the admin section click [here](https://frozen-meadow-03062.herokuapp.com/#/admin)
+For the admin section click [here](https://frozen-meadow-03062.herokuapp.com/#/admin). Apologies if the link takes a little while to load, it's being hosted for free and is probably sleeping.
 
 ## Screen Shot
 

@@ -2,7 +2,7 @@
 
 ## Description
 
-Duration: Two-day Sprint
+_Duration: Two-day Sprint_
 
 The goal of this project was to create a feedback collection form using React and Redux. The requirements were that 
 each of the four feedback views existing on their own component with navigation routes to move to the next one. The feedback
@@ -44,6 +44,18 @@ database with the listed table name and structure.
 6. Run `npm run client` in another terminal to start the client page.
     - Stop the local server by pressing `ctrl-c`.    
 7. Open a browser window and navigate to [http://localhost:3000/](http://localhost:3000/) to use the app.
+
+## Usage
+
+1. The main view is the beginning of a feedback form. There are instructions for a form of self reflection and feedback to be ranked on a scale from
+   1-5. The arrow button the right takes you to the next feedback entry. The next two entries are similar, with the fourth being a field to enter in 
+   comments. All of the red buttons on the left navigate you one view previous if you'd like to adjust any of your feedback. 
+2. After the comment is a review page which displays the feedback selections you've chosen. There is still an option to go back and make changes, as well
+   as a submit button which sends your feedback data to the database. After clicking the submit button you're brought to a confirmation page with a button
+   that lets you start a new feedback form and navigates you back to the beginning.
+3. Naviagating to the /admin route in the URL bar brings you to an Admin page with a table containing all the previous feedback in the database. There is
+   a delete button for each piece of feedback which removes that feedback entry from the database. 
+
 
 ## Built With
 

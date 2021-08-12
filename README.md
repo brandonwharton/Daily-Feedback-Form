@@ -2,6 +2,8 @@
 
 ## Description
 
+Duration: Two-day Sprint
+
 The goal of this project was to create a feedback collection form using React and Redux. The requirements were that 
 each of the four feedback views existing on their own component with navigation routes to move to the next one. The feedback
 for the first three views needed to be validated and were required, while the fourth comment view was optional. It was required
@@ -16,7 +18,7 @@ navigable by a /admin route which displays the full list of feedback from the da
 the database on the admin page which prompts a confirmation before sending the delete request.
 
 You can view this project on Heroku [here](https://frozen-meadow-03062.herokuapp.com/#/).
-For the admin section click [here](https://frozen-meadow-03062.herokuapp.com/#/admin)
+For the admin section click [here](https://frozen-meadow-03062.herokuapp.com/#/admin). Apologies if the link takes a little while to load, it's being hosted for free and is probably sleeping.
 
 ## Screen Shot
 

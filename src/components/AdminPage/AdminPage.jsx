@@ -107,69 +107,64 @@ function AdminPage() {
 
     console.log(feedback);
     return (
-        <TableContainer component={Paper}>
-            <Table>
-                <TableHead>
-                    <DarkTableCell>Feeling</DarkTableCell>
-                    <DarkTableCell>Understanding</DarkTableCell>
-                    <DarkTableCell>Supported</DarkTableCell>
-                    <DarkTableCell>Comments</DarkTableCell>
-                    <DarkTableCell></DarkTableCell>
-                    <DarkTableCell></DarkTableCell>
-                </TableHead>
-                <TableBody>
-                    {feedback.map(entry => (
-                        <TableRow key={entry.id}>
-                            <TableCell>{entry.feeling}</TableCell>
-                            <TableCell>{entry.understanding}</TableCell>
-                            <TableCell>{entry.support}</TableCell>
-                            <TableCell>{entry.comments}</TableCell>
-                            <TableCell>
-                                <Button
-                                    variant="contained"
-                                    onClick={() => handleDeleteOpen(entry.id)}
-                                // onClick={() => handleDelete(event, entry.id)}
-                                >
-                                    <Delete />
-                                </Button>
-                                <Dialog
-                                    open={open}
-                                    onClose={handleDeleteClose}
-                                    aria-labelledby="alert-dialog-title"
-                                    aria-describedby="alert-dialog-description"
-                                >
-                                    <DialogTitle id="alert-dialog-title">
-                                        {"Delete this feedback entry?"}
-                                    </DialogTitle>
-                                    <DialogContent>
-                                        <DialogContentText id="alert-dialog-description">
-                                            This cannot be undone.
-                                        </DialogContentText>
-                                    </DialogContent>
-                                    <DialogActions>
-                                        <Button onClick={handleDeleteClose}>
-                                            Cancel
-                                        </Button>
-                                        <Button onClick={deleteEntry}>
-                                            Delete
-                                        </Button>
-                                    </DialogActions>
-                                </Dialog>
-                            </TableCell>
-                            <TableCell>
-                                <Button
-                                    variant="contained"
-                                    color="secondary"
-                                    onClick={() => toggleFlagged(event, entry.id, entry.flagged)}
-                                >
-                                    Flag
-                                </Button>
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+        <div>
+            <h2>Previous Feedback</h2>
+            <TableContainer component={Paper}>
+                <Table>
+                    <TableHead>
+                        <DarkTableCell>Feeling</DarkTableCell>
+                        <DarkTableCell>Understanding</DarkTableCell>
+                        <DarkTableCell>Supported</DarkTableCell>
+                        <DarkTableCell>Comments</DarkTableCell>
+                        <DarkTableCell></DarkTableCell>
+                        <DarkTableCell></DarkTableCell>
+                    </TableHead>
+                    <TableBody>
+                        {feedback.map(entry => (
+                            <TableRow key={entry.id}>
+                                <TableCell>{entry.feeling}</TableCell>
+                                <TableCell>{entry.understanding}</TableCell>
+                                <TableCell>{entry.support}</TableCell>
+                                <TableCell>{entry.comments}</TableCell>
+                                <TableCell>
+                                    <Button
+                                        variant="contained"
+                                        onClick={() => handleDeleteOpen(entry.id)}
+                                        // onClick={() => handleDelete(event, entry.id)}
+                                    >
+                                        <Delete />
+                                    </Button>
+                                    <Dialog
+                                        open={open}
+                                        onClose={handleDeleteClose}
+                                        aria-labelledby="alert-dialog-title"
+                                        aria-describedby="alert-dialog-description"
+                                    >
+                                        <DialogTitle id="alert-dialog-title">
+                                            {"Delete this feedback entry?"}
+                                        </DialogTitle>
+                                        <DialogContent>
+                                            <DialogContentText id="alert-dialog-description">
+                                                This cannot be undone.
+                                            </DialogContentText>
+                                        </DialogContent>
+                                        <DialogActions>
+                                            <Button onClick={handleDeleteClose}>
+                                                Cancel
+                                            </Button>
+                                            <Button onClick={deleteEntry}>
+                                                Delete
+                                            </Button>
+                                        </DialogActions>
+                                    </Dialog>
+                                </TableCell>
+                                <TableCell></TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div>
     )
 }
 
